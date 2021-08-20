@@ -1,0 +1,21 @@
+.workingdiv{
+    width:100%;
+    margin-top: 1.5rem;
+}
+
+.outline{
+    border: 2px solid black;
+    border-radius: 1rem;
+}
+.addressdetail{
+    text-align: right;
+}
+.buttons{
+    margin:2rem;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+/* Responsive */

@@ -1,0 +1,19 @@
+.couponform {
+    padding: 3rem;
+    /* background-color: blue;  */
+    display: flex;
+    height: auto;
+    width: auto;
+    justify-content: center;
+    align-items: center;
+}
+.coupon{
+    
+    border: 2px solid black;
+    border-radius: 1rem;
+    padding: 25px 20px 25px 20px;
+    
+}
+.coupontitle{
+    text-align: center;
+}

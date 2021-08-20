@@ -1,0 +1,16 @@
+.container-fluid{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height:90vh;
+    
+}
+.login_form{
+    width:30vw;
+    padding: 1rem;
+    border: 2px solid black;
+    border-radius: 1rem;
+}
+.staffloginheader{
+    text-align: center;
+}
