@@ -7,6 +7,7 @@ import axios from "axios";
 function AddMenuItem(props) {
     const [catval, setcatval] = useState([]);
     const [idval, setidval] = useState();
+    const [imgidval, setimgidval] = useState();
     const [formValues, setFormValues] = useState({
         title: '',
         category: '',
@@ -24,14 +25,15 @@ function AddMenuItem(props) {
             sellingPrice: Number(formValues.price),
             itemType: "VEG",
             categoryId: idval,
-            imageId: 3
+            imageId: imgidval
         }
+        console.log(postdata)
         axios.post("api/staff/item", postdata).then((res) => {
             console.log(res);
         })
             .catch(console.error());
 
-        
+
     }
 
     function handleInputChange(event) {
@@ -49,7 +51,7 @@ function AddMenuItem(props) {
         })
             .catch(console.error());
     }, [])
-    
+
 
     function handleDropdownChange(event) {
         setidval(event)
@@ -60,7 +62,7 @@ function AddMenuItem(props) {
             }
 
         })
-        
+
     }
     function handleFileChange(event) {
         setFormValues((prevState) => {
@@ -70,6 +72,23 @@ function AddMenuItem(props) {
             }
         })
     }
+    // Image upload
+
+    const [formImage, setFormImage] = useState({
+        selectedImage: null
+    })
+
+    function imageInputHandler(event) {
+        setFormImage({ selectedImage: event.target.files[0] });
+    }
+    
+    function onImageUpload() {
+        const formData = new FormData();
+        formData.append("itemImage", formImage.selectedImage);
+        axios.post("https://food-app-timesinternet.herokuapp.com/api/staff/item/image", formData)
+            .then(resp => setimgidval(resp.data.id))
+            .catch(err => console.log(err))
+    };
 
     return (
         <div className="menuitemform">
@@ -84,8 +103,9 @@ function AddMenuItem(props) {
                         </Form.Group>
 
                         <Form.Group controlId="formFile" className="mb-3">
-                            <Form.Label>Add Item Image</Form.Label>
-                            <Form.Control type="file" onChange={handleFileChange} name="imgURL" />
+                            <Form.Label>Default file input example</Form.Label>
+                            <Form.Control onChange={imageInputHandler} type="file" accept="image/png, image/gif, image/jpeg" />
+                            <Button onClick={onImageUpload}>Upload</Button>
                         </Form.Group>
 
 
@@ -96,9 +116,9 @@ function AddMenuItem(props) {
 
                             <Dropdown.Menu className="dropdown-menu ">
                                 {
-                                catval.map((val, index) => {
-                                    return <Dropdown.Item eventKey={val.id}>{val.name}</Dropdown.Item>
-                                })
+                                    catval.map((val, index) => {
+                                        return <Dropdown.Item eventKey={val.id}>{val.name}</Dropdown.Item>
+                                    })
                                 }
                             </Dropdown.Menu>
                         </Dropdown>

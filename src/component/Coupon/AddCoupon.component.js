@@ -23,9 +23,7 @@ function AddCoupon(props) {
 
     function addCoupon(event) {
         event.preventDefault(); // prevents refreshing
-        const postCoupon={
-            formValues
-        }
+        const postCoupon=formValues
         axios.post('/api/staff/coupon', postCoupon ).then((response)=>{
             console.log(response);
         })
