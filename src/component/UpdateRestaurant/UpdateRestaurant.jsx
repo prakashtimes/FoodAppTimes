@@ -2,6 +2,8 @@ import { useEffect, useState } from "react";
 import { Form, Button, Alert, Image } from "react-bootstrap";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import axios from 'axios';
+import "./UpdateRestaurant.css"
+
 const UpdateRestaurant = () => {
 
     const [showAlert, setShowAlert] = useState(false);
@@ -78,44 +80,49 @@ const UpdateRestaurant = () => {
 
     return (
         <>
-            <div style={{ width: "400px", margin: "auto" }}>
-                <Form onSubmit={updateDetails}>
-                    <h3 className="pincodetitle">Update Restaurant Details</h3>
-                    {showAlert &&
-                        <Alert variant="info" onClose={() => setShowAlert(false)} dismissible>
-                            Updated!
-                        </Alert>
-                    }
-                    <Form.Label>Restaurant Logo</Form.Label>
-                    <Image id="output" src={formImage.selectedImage} />
-                    <Form.Group controlId="formFile" className="mb-3">
-                        <Form.Control onChange={imageInputHandler} type="file" accept="image/*" />
-                        <Button onClick={onImageUpload}>Update</Button>
-                    </Form.Group>
-                    <Form.Group className="mb-3" >
-                        <Form.Label>Address Line 1</Form.Label>
-                        <Form.Control type="text" name="line1" onChange={handleInputChange} value={address.line1} />
-                    </Form.Group>
-                    <Form.Group className="mb-3" >
-                        <Form.Label>Address Line 2</Form.Label>
-                        <Form.Control type="text" name="line2" onChange={handleInputChange} value={address.line2} />
-                    </Form.Group>
-                    <Form.Group className="mb-3" >
-                        <Form.Label>Pincode</Form.Label>
-                        <Form.Control type="text" name="pincode" onChange={handleInputChange} value={address.pincode} />
-                    </Form.Group>
-                    <Form.Group className="mb-3" >
-                        <Form.Label>City</Form.Label>
-                        <Form.Control type="text" name="city" onChange={handleInputChange} value={address.city} />
-                    </Form.Group>
-                    <Form.Group className="mb-3" >
-                        <Form.Label>State</Form.Label>
-                        <Form.Control type="text" name="state" onChange={handleInputChange} value={address.state} />
-                    </Form.Group>
-                    <Button variant="primary" type="submit" style={{ float: 'right' }} >
-                        Update
-                    </Button>
-                </Form>
+            <div className="updateresform">
+                <div className="updaterescoupon">
+
+                    <div style={{ width: "400px", margin: "auto" }}>
+                        <Form onSubmit={updateDetails}>
+                            <h3 className="pincodetitle">Update Restaurant Details</h3>
+                            {showAlert &&
+                                <Alert variant="info" onClose={() => setShowAlert(false)} dismissible>
+                                    Updated!
+                                </Alert>
+                            }
+                            <Form.Label>Restaurant Logo</Form.Label>
+                            <Image id="output" src={formImage.selectedImage} />
+                            <Form.Group controlId="formFile" className="mb-3">
+                                <Form.Control onChange={imageInputHandler} type="file" accept="image/*" />
+                                <Button onClick={onImageUpload}>Update</Button>
+                            </Form.Group>
+                            <Form.Group className="mb-3" >
+                                <Form.Label>Address Line 1</Form.Label>
+                                <Form.Control type="text" name="line1" onChange={handleInputChange} value={address.line1} />
+                            </Form.Group>
+                            <Form.Group className="mb-3" >
+                                <Form.Label>Address Line 2</Form.Label>
+                                <Form.Control type="text" name="line2" onChange={handleInputChange} value={address.line2} />
+                            </Form.Group>
+                            <Form.Group className="mb-3" >
+                                <Form.Label>Pincode</Form.Label>
+                                <Form.Control type="text" name="pincode" onChange={handleInputChange} value={address.pincode} />
+                            </Form.Group>
+                            <Form.Group className="mb-3" >
+                                <Form.Label>City</Form.Label>
+                                <Form.Control type="text" name="city" onChange={handleInputChange} value={address.city} />
+                            </Form.Group>
+                            <Form.Group className="mb-3" >
+                                <Form.Label>State</Form.Label>
+                                <Form.Control type="text" name="state" onChange={handleInputChange} value={address.state} />
+                            </Form.Group>
+                            <Button variant="primary" type="submit" style={{ float: 'right' }} >
+                                Update
+                            </Button>
+                        </Form>
+                    </div>
+                </div>
             </div>
         </>
     )
