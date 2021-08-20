@@ -8,7 +8,7 @@ import Footer from './component/Footer/Footer';
 import FinalAddCoupon from './component/Coupon/FinalAddCoupon.component';
 import FinalAddMenuItem from './component/MenuItem/FinalAddMenuItem.component';
 import FinalAddPincode from './component/Pincode/FinalAddPincode.component';
-import ShowRestraurantInfo from './component/Restraurant/RestraurantInfo';
+
 import Home from './component/Home/Home';
 
 import axios from "axios";
@@ -80,16 +80,18 @@ const App = () => {
     
         {/* <Route exact path="/stafflogin" component={Stafflogin} /> */}
         
-        <Switch>
+        
         <Navbar />
-        <Route exact path="/pincode" component={FinalAddPincode} />
-        <Route exact path="/coupon" component={FinalAddCoupon} />
-        <Route exact path="/menu" component={FinalAddMenuItem} />
-        <Route exact path="/addstaff" component={AddStaffDetail} />
-        <Route exact path="/restraurantdetails" component={ShowRestraurantInfo} />
-        <Route exact path="/" component={Home} />
+        <main>
+        <Route  path="/pincode" component={FinalAddPincode} />
+        <Route path="/coupon" component={FinalAddCoupon} />
+        <Route  path="/menu" component={FinalAddMenuItem} />
+        <Route  path="/addstaff" component={AddStaffDetail} />
+        
+        <Route  path="/" component={Home} />
+        </main>
         <Footer /> 
-        </Switch>
+        
         
         
     </>

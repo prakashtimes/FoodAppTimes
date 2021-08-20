@@ -59,9 +59,7 @@ const Stafflogin = (props) => {
                                    name="password"
                                 />
                             </Form.Group>
-                            <Form.Group className="mb-3" controlId="formBasicCheckbox">
-                                <Form.Check type="checkbox" label="Remember Me" />
-                            </Form.Group>
+                            
                             <Button variant="primary" type="submit">
                                 Log in
                             </Button>

@@ -62,7 +62,7 @@ const Home = () => {
 
     return (
         <>
-            <Navbar />
+            
             <div className="d-flex align-items-center">
                 <div className="container">
                     <div className="row workingdiv outline mx-auto">
@@ -107,7 +107,7 @@ const Home = () => {
                     </div>
 
                 <MenuItemCards />
-                 <Footer />
+                 
         </>
      )
 }
