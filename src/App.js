@@ -79,16 +79,18 @@ const App = () => {
     <>
     
         {/* <Route exact path="/stafflogin" component={Stafflogin} /> */}
-        <BrowserRouter>
+        
         <Switch>
+        <Navbar />
         <Route exact path="/pincode" component={FinalAddPincode} />
         <Route exact path="/coupon" component={FinalAddCoupon} />
         <Route exact path="/menu" component={FinalAddMenuItem} />
         <Route exact path="/addstaff" component={AddStaffDetail} />
         <Route exact path="/restraurantdetails" component={ShowRestraurantInfo} />
         <Route exact path="/" component={Home} />
+        <Footer /> 
         </Switch>
-        </BrowserRouter>
+        
         
     </>
 

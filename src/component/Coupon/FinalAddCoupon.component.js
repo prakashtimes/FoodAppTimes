@@ -5,9 +5,9 @@ import Footer from "../Footer/Footer"
 const FinalAddCoupon = () => {
     return (
         <>
-            <Navbar />
+            
             <AddCoupon />
-            <Footer /> 
+            
         </>
     )
 }
