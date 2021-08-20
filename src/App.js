@@ -87,8 +87,7 @@ const App = () => {
         <Route path="/coupon" component={FinalAddCoupon} />
         <Route  path="/menu" component={FinalAddMenuItem} />
         <Route  path="/addstaff" component={AddStaffDetail} />
-        
-        <Route  path="/" component={Home} />
+        <Route exact path="/" component={Home} />
         </main>
         <Footer /> 
         
