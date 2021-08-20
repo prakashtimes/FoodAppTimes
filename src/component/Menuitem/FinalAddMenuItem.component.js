@@ -5,9 +5,9 @@ import Footer from "../Footer/Footer"
 const FinalAddMenuItem = () => {
     return (
         <>
-            <Navbar />
+            
             <AddMenuItem />
-            <Footer /> 
+             
         </>
     )
 }

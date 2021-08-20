@@ -5,9 +5,9 @@ import Footer from "../Footer/Footer"
 const FinalAddPincode = () => {
     return (
         <>
-            <Navbar />
+            
             <AddPincode />
-            <Footer /> 
+            
         </>
     )
 }
