@@ -34,13 +34,13 @@ function AddCoupon(props) {
             maxPerUser: 4,
             totalUse: 5,
             termsAndCondition: "You can use this",
-            imageId: imgid
+            imageId: ""
         }
     )
         console.log(formValues)
     function addCoupon(event) {
         event.preventDefault(); // prevents refreshing
-        const postCoupon = formValues
+        const postCoupon = {...formValues, imageId: imgid}
         axios.post('/api/staff/coupon', postCoupon).then((response) => {
             console.log(response);
         })

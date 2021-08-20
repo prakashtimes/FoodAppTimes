@@ -2,6 +2,7 @@ import React,{useState, useEffect} from 'react';
 import { Route, Switch, BrowserRouter, Redirect } from 'react-router-dom';
 import './App.css';
 import Stafflogin from './component/Stafflogin/Stafflogin';
+import UpdateRestaurant from './component/UpdateRestaurant/UpdateRestaurant';
 import AddStaffDetail from './component/AddStaffDetail/AddStaffDetail';
 import Navbar from './component/Header/Navbar';
 import Footer from './component/Footer/Footer';
@@ -87,6 +88,7 @@ const App = () => {
         <Route path="/coupon" component={FinalAddCoupon} />
         <Route  path="/menu" component={FinalAddMenuItem} />
         <Route  path="/addstaff" component={AddStaffDetail} />
+        <Route  path="/updateres" component={UpdateRestaurant} />
         <Route exact path="/" component={Home} />
         </main>
         <Footer /> 
