@@ -1,8 +1,7 @@
 import React,{useEffect, useState} from "react";
 import  "./MenuItemsCards.css";
 import axios from "axios"
-import { arr } from "c:/users/jyoti.das/downloads/food-app-main-main/foodie/src/components/carousel/carouseimgdata";
-import { isFor } from "@babel/types";
+
 const MenuItemCards = () => {
     const[id, setid] =useState();
     const [arr, setarr] = useState([]);
