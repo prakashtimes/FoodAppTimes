@@ -1,44 +1,32 @@
-import React from "react";
+import React,{useEffect, useState} from "react";
 import  "./MenuItemsCards.css";
+import axios from "axios"
 import { arr } from "c:/users/jyoti.das/downloads/food-app-main-main/foodie/src/components/carousel/carouseimgdata";
+import { isFor } from "@babel/types";
 const MenuItemCards = () => {
-    const arr =[
-        {
-            name: "Paneer Butter Masala",
-            price: "100"
-        },
-        {
-            name: "1Paneer Butter Masala",
-            price: "100"
-        },
-        {
-            name: "2Paneer Butter Masala",
-            price: "1200"
-        },
-        {
-            name: "123Paneer Butter Masala",
-            price: "12300"
-        },
-        {
-            name: "34Paneer Butter Masala",
-            price: "4100"
-        },
-        {
-            name: "79Paneer Butter Masala",
-            price: "5100"
-        },
+    const[id, setid] =useState();
+    const [arr, setarr] = useState([]);
+    axios.get('/api/staff/item').then(res => {
+        setarr(res.data)
+        // console.log(res.data);
+    })
+    .catch(console.error())
+    // useEffect(
         
-    ]
+    // , []);
+    
+
+    
     const rendercards=(info, index)=>{
         return(
             <>
              <li className="cards_item" key={index}>
                         <div className="card">
-                            <div className="card_image"><img src="https://picsum.photos/500/300/?image=10" /></div>
+                            <div className="card_image"><img src={info?.image?.mainUrl} /></div>
                             <div className="card_content">
-                                <h2 className="card_title">{info.name}</h2>
-                                <p className="card_text">Category: Indian</p>
-                                <button className="btn1 card_btn">₹ {info.price}/-</button>
+                                <h2 className="card_title">{info?.name}</h2>
+                                <p className="card_text">{info?.itemType}</p>
+                                <button className="btn1 card_btn">₹ {info?.sellingPrice}/-</button>
                             </div>
                         </div>
                     </li>

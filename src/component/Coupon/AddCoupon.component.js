@@ -48,8 +48,8 @@ function AddCoupon(props) {
         setFormValues({
             name: "",
             value: 15,
-            Date: "26-12-2021",
-            Date: "22-12-2022",
+            startingDate: "26-12-2021",
+            endingDate: "22-12-2022",
             minimumCartValue: 11,
             maxDiscount: "",
             maxPerUser: 4,
